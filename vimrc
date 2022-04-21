@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -11,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
@@ -57,6 +57,7 @@ set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
+set nofoldenable
 
 set number
 set relativenumber
@@ -103,4 +104,5 @@ set mouse=a         " Enable the use of the mouse.
 filetype plugin indent on
 syntax on
 autocmd BufRead,BufNewFile *.md setlocal filetype=markdown spelllang=en_us spell makeprg=pandoc\ -o\ %<.pdf\ %;\ pdfopen\ %<.pdf\ &
+let g:markdown_folding = 0
 autocmd BufRead,BufNewFile *.tex setlocal spelllang=en_us spell makeprg=pdflatex\ %;\ pdfopen\ %<.pdf
